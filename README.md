@@ -1,4 +1,4 @@
-# Custom-Oled-Images
+# Custom Oled Images
 
 Using photoshop you can adapt almost any image to use in your OLED display. I used a ESP32 and this webpage https://marlinfw.org/tools/u8glib/converter.html to convert the images to code, but it can be done with many other options.
 
@@ -38,7 +38,8 @@ I have uploaded the code I used to make this for my girlfriend:
 
 https://user-images.githubusercontent.com/79780807/156472561-74ea6aab-1d7e-484f-8ac6-26b68764b27a.mp4
 
-
+![ee6d7011-045e-4fc9-9849-482680ccba74](https://user-images.githubusercontent.com/79780807/156473103-0f65ca5a-3a58-44bd-8d37-8e65d9d52038.gif)
+      One bitmap is the cats image, and I drew the other one with photoshop and followed the same steps
 If you need more information about how to implement the circuit or the code, you can read this tutorial https://www.electronicshub.org/esp32-oled-display/
 
 ## Contact
