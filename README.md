@@ -1,42 +1,45 @@
-# MarianoTV
+# Custom-Oled-Images
 
-MarianoTV opens random videos in a determined folder (all subfolders included) with [VLC](https://www.videolan.org/vlc/index.es.html). Creates a registry to store watched videos not to repeat them.
+Using photoshop you can adapt almost any image to use in your OLED display. I used a ESP32 and this webpage https://marlinfw.org/tools/u8glib/converter.html to convert the images to code, but it can be done with many other options.
 
-## Prerequisites
+## Things I used:
 
-Before you begin, ensure you have met the following requirements:
+* [ESP-WROOM-32](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf)
+* Photoshop CS6
+* Arduino IDE
+* SSD1306 and GFX libraries from Adafruit (install them on the Arduino IDE)
+* SSD1306 Monochrome OLED Display (with a resolution of 128 pixels by 64 pixels)
+* Jumper wires
 
-* You have installed the latest version of [VLC](https://www.videolan.org/vlc/index.es.html).
-* Python 3 or higher.
+## Adapting image resolution
 
-## Installing MarianoTV
+Search for an image you want to display, like this one:
 
-To install MarianoTV, follow these steps:
+![image](https://user-images.githubusercontent.com/79780807/156453515-729198b2-9559-4cc8-870e-73189118c80f.png)
 
-* Download MarianoTV.py
-* Move it to the folder where you have all your videos (remember it includes all subfolders).
-* By default, in MarianoTV.py, VLC.exe path is set to C:\Program Files (x86)\VideoLAN\VLC\vlc.exe". You may have to edit that line:
-```python
-    vlc = r"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" #Path of VLC.exe
-```
+If you download it, you will see it has a lot of (useless) pixels. I only got 128x64 pixels on my OLED display, so I will have to reduce the resolution.
 
-## Using MarianoTV
+* Open it on Photoshop
+* Go to Image->Image size...
+* ![image](https://user-images.githubusercontent.com/79780807/156455017-2308a53b-1f27-4e38-aae5-115b9f5bdea1.png)
 
-* Just double click on MarianoTV.py (I recommend creating a desktop shortcut). It will open a console window that will start playing random videos.
-* To correctly close this program, Alt+Tab to console and press Enter (if closed other way it may corrupt the registry).
+* Set the resolution to 128x64, and "Nearest neighbor (preserv hard edges)" so we still get the square "pixels" after the reduction
+* Note that I have deleted the gey background because my OLED only uses black and white colours
+* Save the image as a bitmap
 
-### Other functions
+## Bitmap converter
 
-* There is a watched videos counter. If it reaches 300 it will reset the watched list.
-```python
-    if contador > 300: #If we have watched more than 300 videos 
-      f = open('CapitulosVistos.txt', 'w')    #Reset the list to start again
+* Go to https://marlinfw.org/tools/u8glib/converter.html
+* Upload your bitmap image, it will return an array
+* Now we can copy that array to our code
 
-```
-* There is a 10% chance you get a repeated video
-```python
-    if random.randint(1,10) == 1: #There is a 10% chance to watch a video you have already seen
-```
+I have uploaded the code I used to make this for my girlfriend:
+
+
+https://user-images.githubusercontent.com/79780807/156472561-74ea6aab-1d7e-484f-8ac6-26b68764b27a.mp4
+
+
+If you need more information about how to implement the circuit or the code, you can read this tutorial https://www.electronicshub.org/esp32-oled-display/
 
 ## Contact
 
