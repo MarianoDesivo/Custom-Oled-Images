@@ -246,16 +246,7 @@ void setup()
 }
 void loop()
 {
-//  String texto = "Los niños bautistas se la comen";
-//  display.clearDisplay();
-//  display.setTextSize(1);
-//  display.setTextColor(SSD1306_WHITE);
-//  display.setCursor(5,28);
-//  for(int i=0; i<texto.length() ;i++){
-//    display.print(texto[i]);
-//    display.display();
-//    delay(300);
-//  }
+
 
 //  display.clearDisplay();
 //  display.drawBitmap(0, 0, dibu, SCREEN_WIDTH, SCREEN_HEIGHT, SSD1306_WHITE);
